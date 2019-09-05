@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"rest-api-gin/http/dao/user_dao"
 	"rest-api-gin/http/dto/user_dto"
-	"rest-api-gin/http/models"
+	"rest-api-gin/http/response"
 	"strconv"
 )
 
@@ -19,15 +19,7 @@ func CreateUser(c *gin.Context)  {
 		c.Abort()
 		return
 	}
-	c.JSON(http.StatusOK, models.UserMapper{
-		user.ID,
-		user.Name,
-		user.Email,
-		user.Phone,
-		user.ClientType,
-		user.CreatedAt,
-		user.UpdatedAt,
-	})
+	c.JSON(http.StatusOK, response.Single(user))
 	return
 }
 
@@ -45,15 +37,7 @@ func GetUserById(c *gin.Context)  {
 		c.Abort()
 		return
 	}
-	c.JSON(http.StatusOK, models.UserMapper{
-		user.ID,
-		user.Name,
-		user.Email,
-		user.Phone,
-		user.ClientType,
-		user.CreatedAt,
-		user.UpdatedAt,
-	})
+	c.JSON(http.StatusOK, response.Single(user))
 	return
 
 }
@@ -75,7 +59,7 @@ func ListUser(c *gin.Context)  {
 		c.Abort()
 		return
 	}
-	c.JSON(http.StatusOK, result)
+	c.JSON(http.StatusOK, response.List(result))
 	return
 }
 
@@ -99,15 +83,7 @@ func UpdateUser(c *gin.Context)  {
 		c.Abort()
 		return
 	}
-	c.JSON(http.StatusOK, models.UserMapper{
-		user.ID,
-		user.Name,
-		user.Email,
-		user.Phone,
-		user.ClientType,
-		user.CreatedAt,
-		user.UpdatedAt,
-	})
+	c.JSON(http.StatusOK, response.Single(user))
 	return
 }
 
@@ -120,6 +96,6 @@ func DeleteUser(c *gin.Context)  {
 		c.Abort()
 		return
 	}
-	c.JSON(http.StatusOK, nil)
+	c.JSON(http.StatusOK, response.SuccessDeleted())
 	return
 }
