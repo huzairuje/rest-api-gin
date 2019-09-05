@@ -3,9 +3,9 @@ package user_controller
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"rest_api_gin/http/dao/user_dao"
-	"rest_api_gin/http/dto/user_dto"
-	"rest_api_gin/http/models"
+	"rest-api-gin/http/dao/user_dao"
+	"rest-api-gin/http/dto/user_dto"
+	"rest-api-gin/http/models"
 	"strconv"
 )
 

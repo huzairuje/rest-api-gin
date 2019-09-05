@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"os"
-	"rest_api_gin/configs"
-	"rest_api_gin/http/controller/user_controller"
+	"rest-api-gin/configs"
+	"rest-api-gin/http/controller/user_controller"
 )
 
 func main()  {
