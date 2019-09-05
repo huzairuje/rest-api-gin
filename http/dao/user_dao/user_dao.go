@@ -2,10 +2,10 @@ package user_dao
 
 import (
 	"github.com/gin-gonic/gin"
-	"rest_api/configs"
-	"rest_api/http/dto/user_dto"
-	"rest_api/http/models"
-	"rest_api/utils"
+	"rest_api_gin/configs"
+	"rest_api_gin/http/dto/user_dto"
+	"rest_api_gin/http/models"
+	"rest_api_gin/utils"
 )
 
 func CreateUser(dto user_dto.CreateUserDTO) (user models.User, error error) {
