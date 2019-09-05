@@ -1,0 +1,5 @@
+.env
+Gopkg.lock
+vendor
+.idea
+go_build_main_go
