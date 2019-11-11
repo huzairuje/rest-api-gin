@@ -47,17 +47,7 @@ func ListUser() (result gin.H, error error) {
 	var user []models.User
 	db := configs.Database()
 	db.Find(&user)
-	if len(user) >= 0 {
-		result = gin.H{
-			"result": user,
-			"count":  len(user),
-		}
-	} else {
-		result = gin.H{
-			"result": nil,
-			"count":  0,
-		}
-	}
+	result = gin.H{"data": user}
 	return result, error
 }
 
